@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: frp
   author: jinmiaoluo
   description: this role will install frp and setup supervisor for frp to server continuously
   company: Beansmile
@@ -16,7 +17,6 @@ galaxy_info:
     - all
   galaxy_tags: 
     - 'proxy'
-    - 'reverse_proxy'
 
 dependencies: 
   - geerlingguy.pip
