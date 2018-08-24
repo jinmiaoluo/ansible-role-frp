@@ -1,0 +1,9 @@
+---
+# defaults file for frp
+frp_version: 0.21.0
+arch: linux
+bit: amd64
+install_frpc: yes
+frpc_config_path: "frpc.ini"
+install_frps: no
+frps_config_path: "frps.ini"

@@ -1,0 +1,42 @@
+---
+# tasks file for frp
+- name: 'download frp'
+  unarchive:    
+    src: https://github.com/fatedier/frp/releases/download/v{{ frp_version }}/frp_{{ frp_version }}_{{ arch }}_{{ bit }}.tar.gz
+    dest: /tmp/
+    remote_src: yes
+    mode: 0440
+
+- name: copy frpc executable file 
+  copy:
+    src: /tmp//frp_{{ frp_version }}_{{ arch }}_{{ bit }}/frpc
+    dest: /usr/local/bin/frpc
+    mode: 0744
+    remote_src: yes
+  when: install_frpc
+  notify: restart frpc
+
+- name: upload frpc config
+  template:
+    src: "{{ frpc_config_path }}"
+    dest: /etc/frpc.ini
+    mode: 0400
+  when: install_frpc
+  notify: restart frpc
+
+- name: copy frps executable file 
+  copy:
+    src: /tmp//frp_{{ frp_version }}_{{ arch }}_{{ bit }}/frps
+    dest: /usr/local/bin/frps
+    mode: 0744
+    remote_src: yes
+  when: install_frps
+  notify: restart frps
+
+- name: upload frps config
+  template:
+    src: "{{ frps_config_path }}"
+    dest: /etc/frps.ini
+    mode: 0400
+  when: install_frps
+  notify: restart frps

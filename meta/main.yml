@@ -1,0 +1,23 @@
+galaxy_info:
+  author: jinmiaoluo
+  description: this role will install frp and setup supervisor for frp to server continuously
+  company: Beansmile
+  license: BSD
+  min_ansible_version: 1.2
+  platforms:
+  - name: Fedora
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
+  galaxy_tags: 
+    - 'proxy'
+    - 'reverse proxy'
+
+dependencies: 
+  - geerlingguy.pip
+  - geerlingguy.supervisor

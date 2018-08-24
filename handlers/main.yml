@@ -1,0 +1,15 @@
+---
+# handlers file for frp
+- name: restart frpc
+  supervisorctl:
+    name: frpc
+    state: restarted
+    username: "{{ supervisor_user }}"
+    password: "{{ supervisor_password }}"
+
+- name: restart frps
+  supervisorctl:
+    name: frps
+    state: restarted
+    username: "{{ supervisor_user }}"
+    password: "{{ supervisor_password }}"
