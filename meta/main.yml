@@ -16,7 +16,7 @@ galaxy_info:
     - all
   galaxy_tags: 
     - 'proxy'
-    - 'reverse proxy'
+    - 'reverse_proxy'
 
 dependencies: 
   - geerlingguy.pip
