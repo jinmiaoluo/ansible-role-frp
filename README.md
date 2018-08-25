@@ -1,6 +1,8 @@
 Role Name
 =========
 
+[![Join the chat at https://gitter.im/ansible-role-frp/Lobby](https://badges.gitter.im/ansible-role-frp/Lobby.svg)](https://gitter.im/ansible-role-frp/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 this role will install frp and setup supervisor for frp to server continuously
 
 Requirements
