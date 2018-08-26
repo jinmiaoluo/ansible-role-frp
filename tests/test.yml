@@ -2,4 +2,55 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - frp
+    - geerlingguy.pip
+    - geerlingguy.supervisor
+    - ansible-role-frp
+
+  vars:
+    pip_package: python-pip
+    pip_install_packages:
+      - name: supervisor
+
+    supervisor_user: root
+    supervisor_password: root
+    supervisor_programs:
+      - name: 'frpc'
+        command: '/usr/local/bin/frpc -c /etc/frpc.ini'
+        state: present
+        configuration: |
+          numprocs=1
+          user=root
+          killasgroup=true
+          stopasgroup=true
+          autostart=true
+          autorestart=true
+          startretries=10000000
+          startsecs=5
+          redirect_stderr=true
+          stdout_logfile=/var/log/supervisor/%(program_name)s.log
+          stdout_logfile_maxbytes=100MB
+          stdout_logfile_backups=10
+      - name: 'frps'
+        command: '/usr/local/bin/frps -c /etc/frps.ini'
+        state: present
+        configuration: |
+          numprocs=1
+          user=root
+          killasgroup=true
+          stopasgroup=true
+          autostart=true
+          autorestart=true
+          startretries=10000000
+          startsecs=5
+          redirect_stderr=true
+          stdout_logfile=/var/log/supervisor/%(program_name)s.log
+          stdout_logfile_maxbytes=100MB
+          stdout_logfile_backups=10
+
+    frp_version: 0.21.0
+    arch: linux
+    bit: amd64
+    install_frpc: yes
+    frpc_config_path: "frpc.ini"
+    install_frps: yes
+    frps_config_path: "frps.ini"

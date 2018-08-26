@@ -1,13 +1,13 @@
 ---
 # tasks file for frp
 - name: 'download frp'
-  unarchive:    
+  unarchive:
     src: https://github.com/fatedier/frp/releases/download/v{{ frp_version }}/frp_{{ frp_version }}_{{ arch }}_{{ bit }}.tar.gz
     dest: /tmp/
     remote_src: yes
     mode: 0440
 
-- name: copy frpc executable file 
+- name: copy frpc executable file
   copy:
     src: /tmp//frp_{{ frp_version }}_{{ arch }}_{{ bit }}/frpc
     dest: /usr/local/bin/frpc
@@ -24,7 +24,7 @@
   when: install_frpc
   notify: restart frpc
 
-- name: copy frps executable file 
+- name: copy frps executable file
   copy:
     src: /tmp//frp_{{ frp_version }}_{{ arch }}_{{ bit }}/frps
     dest: /usr/local/bin/frps
