@@ -1,4 +1,4 @@
-Role Name
+ansible role for FRP ( Fast Reverse Proxy )
 =========
 
 [![Build Status](https://travis-ci.com/jinmiaoluo/ansible-role-frp.svg?branch=master)](https://travis-ci.com/jinmiaoluo/ansible-role-frp)[![Join the chat at https://gitter.im/ansible-role-frp/Lobby](https://badges.gitter.im/ansible-role-frp/Lobby.svg)](https://gitter.im/ansible-role-frp/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
