@@ -46,7 +46,7 @@
           stdout_logfile=/var/log/supervisor/%(program_name)s.log
           stdout_logfile_maxbytes=100MB
           stdout_logfile_backups=10
-    
+
     frp_version: 0.21.0
     arch: linux
     bit: amd64

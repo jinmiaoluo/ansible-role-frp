@@ -15,9 +15,9 @@ galaxy_info:
   - name: Ubuntu
     versions:
     - all
-  galaxy_tags: 
+  galaxy_tags:
     - 'proxy'
 
-dependencies: 
+dependencies:
   - geerlingguy.pip
   - geerlingguy.supervisor
