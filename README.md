@@ -1,7 +1,7 @@
 Role Name
 =========
 
-[![Join the chat at https://gitter.im/ansible-role-frp/Lobby](https://badges.gitter.im/ansible-role-frp/Lobby.svg)](https://gitter.im/ansible-role-frp/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.com/jinmiaoluo/ansible-role-frp.svg?branch=master)](https://travis-ci.com/jinmiaoluo/ansible-role-frp)[![Join the chat at https://gitter.im/ansible-role-frp/Lobby](https://badges.gitter.im/ansible-role-frp/Lobby.svg)](https://gitter.im/ansible-role-frp/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 this role will install frp and setup supervisor for frp to server continuously
 
@@ -9,7 +9,7 @@ Requirements
 ------------
 ```
 - supervisorctl
-- python-pip (base on python 2.x, why? please refer this issue https://github.com/geerlingguy/ansible-role-supervisor/issues/15) 
+- python-pip (base on python 2.x, why? please refer this issue https://github.com/geerlingguy/ansible-role-supervisor/issues/15)
 ```
 
 Role Variables
@@ -76,7 +76,7 @@ supervisor_programs:
 #      stdout_logfile_backups=10
 ```
 
-config for geerlingguy.pip 
+config for geerlingguy.pip
 ```
 pip_package: python-pip
 pip_install_packages:
