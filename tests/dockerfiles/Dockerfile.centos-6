@@ -1,7 +1,18 @@
 FROM centos:6
 
-RUN yum -y install epel-release
-RUN yum -y install git ansible sudo
+RUN yum makecache fast \
+&& yum -y install deltarpm epel-release \
+&& yum -y update \
+&& yum -y install \
+ansible \
+sudo \
+which \
+initscripts \
+python-urllib3 \
+pyOpenSSL \
+python2-ndg_httpsclient \
+python-pyasn1 \
+&& yum clean all
 
 RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers
 
