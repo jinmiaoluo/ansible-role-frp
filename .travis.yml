@@ -7,7 +7,13 @@ env:
   - distribution: centos
     version: 7
   - distribution: ubuntu
+    version: bionic
+  - distribution: ubuntu
     version: xenial
+  - distribution: debian
+    version: stretch
+  - distribution: debian
+    version: jessie
 
 before_install:
   - 'sudo docker pull ${distribution}:${version}'
