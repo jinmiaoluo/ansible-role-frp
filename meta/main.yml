@@ -9,7 +9,6 @@ galaxy_info:
   - name: EL
     versions:
     - 7
-    - 6
   - name: Debian
     versions:
     - stretch
